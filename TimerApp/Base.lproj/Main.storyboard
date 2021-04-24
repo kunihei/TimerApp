@@ -69,6 +69,9 @@
                                 <state key="normal" title="登録">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="setTime:" destination="lVw-5p-y9l" eventType="touchUpInside" id="hI1-6p-7WE"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BNQ-PT-dyZ">
                                 <rect key="frame" x="0.0" y="142" width="414" height="162"/>
@@ -81,10 +84,13 @@
                     <tabBarItem key="tabBarItem" title="タイマー登録" id="7H0-mF-7JN">
                         <imageReference key="image" image="alarm" catalog="system" renderingMode="original"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="datePickerView" destination="BNQ-PT-dyZ" id="i0V-II-RVr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cr7-Qb-IzO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2280" y="-217"/>
+            <point key="canvasLocation" x="2279.7101449275365" y="-217.63392857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="oo1-iG-oOv">
