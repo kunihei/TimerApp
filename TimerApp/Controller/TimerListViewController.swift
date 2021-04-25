@@ -53,7 +53,6 @@ class TimerListViewController: UIViewController,UITableViewDelegate, UITableView
         countDownVC.hcount = timeList[indexPath.row].hcount
         countDownVC.mcount = timeList[indexPath.row].mcount
         countDownVC.scount = timeList[indexPath.row].scount
-        print(countDownVC.mcount)
         navigationController?.pushViewController(countDownVC, animated: true)
         
     }
