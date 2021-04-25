@@ -48,7 +48,6 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
             let pasttimerList = try! PropertyListDecoder().decode([setTimer].self, from: data)
             for i in 0..<pasttimerList.count{
                 setTimerList.append(pasttimerList[i])
-                print(setTimerList[i].mcount)
             }
         }
     }

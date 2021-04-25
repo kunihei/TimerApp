@@ -23,6 +23,8 @@ class TimerListViewController: UIViewController,UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        navigationController?.isNavigationBarHidden = true
         if let data = UserDefaults.standard.data(forKey: "setTimer") {
             timeList = try! PropertyListDecoder().decode([setTimer].self, from: data)
         }
@@ -51,7 +53,8 @@ class TimerListViewController: UIViewController,UITableViewDelegate, UITableView
         countDownVC.hcount = timeList[indexPath.row].hcount
         countDownVC.mcount = timeList[indexPath.row].mcount
         countDownVC.scount = timeList[indexPath.row].scount
-        performSegue(withIdentifier: "timerVC", sender: nil)
+        print(countDownVC.mcount)
+        navigationController?.pushViewController(countDownVC, animated: true)
         
     }
     
