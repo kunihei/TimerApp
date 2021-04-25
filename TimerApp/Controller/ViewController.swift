@@ -84,7 +84,9 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
         if let data = try? PropertyListEncoder().encode(setTimerList) {
             UserDefaults.standard.set(data, forKey: "setTimer")
         }
-        dataList = [[Int](0...24), [Int](0...59), [Int](0...59)]
+        datePickerView.selectRow(0, inComponent: 0, animated: false)
+        datePickerView.selectRow(0, inComponent: 1, animated: false)
+        datePickerView.selectRow(0, inComponent: 2, animated: false)
     }
 }
 
