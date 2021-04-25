@@ -1,13 +1,17 @@
 //
-//  TimerListViewController.swift
+//  countDownViewController.swift
 //  TimerApp
 //
-//  Created by 祥平 on 2021/04/18.
+//  Created by 祥平 on 2021/04/25.
 //
 
 import UIKit
 
-class TimerListViewController: UIViewController {
+class countDownViewController: UIViewController {
+    
+    var hcount = Int()
+    var mcount = Int()
+    var scount = Int()
 
     override func viewDidLoad() {
         super.viewDidLoad()

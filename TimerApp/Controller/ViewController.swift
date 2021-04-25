@@ -13,7 +13,6 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
     
     let dataList = [[Int](0...24), [Int](0...60), [Int](0...60)]
     
-    var timer = Timer()
     var hcount = 0
     var mcount = 0
     var scount = 0
@@ -44,6 +43,14 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
         sStr.sizeToFit()
         sStr.frame = CGRect(x: datePickerView.bounds.width*3/4 - sStr.bounds.width/2, y: datePickerView.bounds.height/2 - (sStr.bounds.height/2), width: sStr.bounds.width, height: sStr.bounds.height)
         datePickerView.addSubview(sStr)
+        
+        if let data = UserDefaults.standard.data(forKey: "setTimer") {
+            let pasttimerList = try! PropertyListDecoder().decode([setTimer].self, from: data)
+            for i in 0..<pasttimerList.count{
+                setTimerList.append(pasttimerList[i])
+                print(setTimerList[i].mcount)
+            }
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -68,12 +75,13 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
     }
     
     @IBAction func setTime(_ sender: Any) {
-        timer.invalidate()
         hcount = dataList[0][datePickerView.selectedRow(inComponent: 0)]
         mcount = dataList[0][datePickerView.selectedRow(inComponent: 1)]
         scount = dataList[0][datePickerView.selectedRow(inComponent: 2)]
         setTimerList.append(setTimer(hcount: hcount, mcount: mcount, scount: scount))
-        UserDefaults.standard.setValue(setTimerList, forKey: "setTimer")
+        if let data = try? PropertyListEncoder().encode(setTimerList) {
+            UserDefaults.standard.set(data, forKey: "setTimer")
+        }
     }
 }
 
