@@ -11,8 +11,7 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
     
     @IBOutlet weak var datePickerView: UIPickerView!
     
-    let dataList = [[Int](0...24), [Int](0...60), [Int](0...60)]
-    
+    var dataList = [[Int](0...24), [Int](0...59), [Int](0...59)]
     var hcount = 0
     var mcount = 0
     var scount = 0
@@ -34,14 +33,14 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
         mStr.text = "分"
         mStr.font = mStr.font.withSize(30)
         mStr.sizeToFit()
-        mStr.frame = CGRect(x: datePickerView.bounds.width/2 - mStr.bounds.width/2, y: datePickerView.bounds.height/2 - (mStr.bounds.height/2), width: mStr.bounds.width, height: mStr.bounds.height)
+        mStr.frame = CGRect(x: datePickerView.bounds.width/1.9 - mStr.bounds.width/1, y: datePickerView.bounds.height/2 - (mStr.bounds.height/2), width: mStr.bounds.width, height: mStr.bounds.height)
         datePickerView.addSubview(mStr)
         
         let sStr = UILabel()
         sStr.text = "秒"
         sStr.font = sStr.font.withSize(30)
         sStr.sizeToFit()
-        sStr.frame = CGRect(x: datePickerView.bounds.width*3/4 - sStr.bounds.width/2, y: datePickerView.bounds.height/2 - (sStr.bounds.height/2), width: sStr.bounds.width, height: sStr.bounds.height)
+        sStr.frame = CGRect(x: datePickerView.bounds.width*1.6/2.1 - sStr.bounds.width/5, y: datePickerView.bounds.height/2 - (sStr.bounds.height/2), width: sStr.bounds.width, height: sStr.bounds.height)
         datePickerView.addSubview(sStr)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +64,7 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
     }
     
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        return datePickerView.bounds.width * 1/4
+        return datePickerView.bounds.width * 1/3.9
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -79,12 +78,13 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
     
     @IBAction func setTime(_ sender: Any) {
         hcount = dataList[0][datePickerView.selectedRow(inComponent: 0)]
-        mcount = dataList[0][datePickerView.selectedRow(inComponent: 1)]
-        scount = dataList[0][datePickerView.selectedRow(inComponent: 2)]
+        mcount = dataList[1][datePickerView.selectedRow(inComponent: 1)]
+        scount = dataList[2][datePickerView.selectedRow(inComponent: 2)]
         setTimerList.append(setTimer(hcount: hcount, mcount: mcount, scount: scount))
         if let data = try? PropertyListEncoder().encode(setTimerList) {
             UserDefaults.standard.set(data, forKey: "setTimer")
         }
+        dataList = [[Int](0...24), [Int](0...59), [Int](0...59)]
     }
 }
 

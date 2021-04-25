@@ -187,8 +187,7 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNQ-PT-dyZ">
                                 <rect key="frame" x="0.0" y="142" width="414" height="162"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="lUv-z2-Fjr"/>
-                                    <constraint firstAttribute="height" constant="162" id="zXn-3z-epd"/>
+                                    <constraint firstAttribute="height" constant="162" id="nXi-3X-jZL"/>
                                 </constraints>
                             </pickerView>
                         </subviews>
@@ -197,10 +196,10 @@
                         <constraints>
                             <constraint firstItem="Sxt-8m-GRy" firstAttribute="bottom" secondItem="tJu-qK-v8f" secondAttribute="bottom" constant="232" id="9V6-t0-vfZ"/>
                             <constraint firstItem="tJu-qK-v8f" firstAttribute="leading" secondItem="Sxt-8m-GRy" secondAttribute="leading" constant="128" id="KAZ-Q1-EfZ"/>
-                            <constraint firstItem="BNQ-PT-dyZ" firstAttribute="trailing" secondItem="Sxt-8m-GRy" secondAttribute="trailing" id="PfL-IP-EOh"/>
                             <constraint firstItem="Sxt-8m-GRy" firstAttribute="trailing" secondItem="tJu-qK-v8f" secondAttribute="trailing" constant="127" id="VBX-3b-eY9"/>
-                            <constraint firstItem="BNQ-PT-dyZ" firstAttribute="top" secondItem="nzE-MS-qbF" secondAttribute="top" constant="142" id="eO6-hs-yeb"/>
-                            <constraint firstItem="BNQ-PT-dyZ" firstAttribute="leading" secondItem="Sxt-8m-GRy" secondAttribute="leading" id="two-dD-sKG"/>
+                            <constraint firstItem="BNQ-PT-dyZ" firstAttribute="trailing" secondItem="Sxt-8m-GRy" secondAttribute="trailing" id="cE6-lg-FGt"/>
+                            <constraint firstItem="BNQ-PT-dyZ" firstAttribute="top" secondItem="Sxt-8m-GRy" secondAttribute="top" constant="98" id="r5x-oS-HA4"/>
+                            <constraint firstItem="BNQ-PT-dyZ" firstAttribute="leading" secondItem="Sxt-8m-GRy" secondAttribute="leading" id="xoE-7w-rsM"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="タイマー登録" id="7H0-mF-7JN">
