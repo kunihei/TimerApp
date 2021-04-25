@@ -15,6 +15,7 @@
 		BA443262262BB56400B07966 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA443260262BB56400B07966 /* Main.storyboard */; };
 		BA443264262BB56400B07966 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA443263262BB56400B07966 /* Assets.xcassets */; };
 		BA443267262BB56400B07966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA443265262BB56400B07966 /* LaunchScreen.storyboard */; };
+		BA88F25D26351DD000E1AB67 /* countDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88F25C26351DD000E1AB67 /* countDownViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BA443263262BB56400B07966 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA443266262BB56400B07966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA443268262BB56400B07966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA88F25C26351DD000E1AB67 /* countDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = countDownViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,15 +64,40 @@
 			children = (
 				BA44325A262BB56400B07966 /* AppDelegate.swift */,
 				BA44325C262BB56400B07966 /* SceneDelegate.swift */,
-				BA2FC56D26339BA7009C3FFA /* TimerList.swift */,
-				BA44325E262BB56400B07966 /* ViewController.swift */,
-				BA2FC53F262BE84D009C3FFA /* TimerListViewController.swift */,
-				BA443260262BB56400B07966 /* Main.storyboard */,
-				BA443263262BB56400B07966 /* Assets.xcassets */,
+				BA88F25F26351DDC00E1AB67 /* Model */,
+				BA88F26326351DF600E1AB67 /* View */,
+				BA88F26126351DE800E1AB67 /* Controller */,
 				BA443265262BB56400B07966 /* LaunchScreen.storyboard */,
 				BA443268262BB56400B07966 /* Info.plist */,
 			);
 			path = TimerApp;
+			sourceTree = "<group>";
+		};
+		BA88F25F26351DDC00E1AB67 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA2FC56D26339BA7009C3FFA /* TimerList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA88F26126351DE800E1AB67 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA44325E262BB56400B07966 /* ViewController.swift */,
+				BA88F25C26351DD000E1AB67 /* countDownViewController.swift */,
+				BA2FC53F262BE84D009C3FFA /* TimerListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA88F26326351DF600E1AB67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA443260262BB56400B07966 /* Main.storyboard */,
+				BA443263262BB56400B07966 /* Assets.xcassets */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA88F25D26351DD000E1AB67 /* countDownViewController.swift in Sources */,
 				BA2FC540262BE84D009C3FFA /* TimerListViewController.swift in Sources */,
 				BA44325F262BB56400B07966 /* ViewController.swift in Sources */,
 				BA44325B262BB56400B07966 /* AppDelegate.swift in Sources */,

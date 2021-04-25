@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct setTimer {
+struct setTimer: Codable {
     var hcount:Int;
     var mcount:Int;
     var scount:Int;
