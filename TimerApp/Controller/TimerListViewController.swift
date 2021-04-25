@@ -31,6 +31,20 @@ class TimerListViewController: UIViewController,UITableViewDelegate, UITableView
         tableView.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .normal, title: "削除") { (action, view, completionHndler) in
+            self.timeList.remove(at: indexPath.row)
+            if let data = try? PropertyListEncoder().encode(self.timeList) {
+                UserDefaults.standard.set(data, forKey: "setTimer")
+            }
+            tableView.reloadData()
+            
+            completionHndler(true)
+        }
+        deleteAction.backgroundColor = .red
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

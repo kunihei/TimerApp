@@ -43,6 +43,10 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
         sStr.sizeToFit()
         sStr.frame = CGRect(x: datePickerView.bounds.width*3/4 - sStr.bounds.width/2, y: datePickerView.bounds.height/2 - (sStr.bounds.height/2), width: sStr.bounds.width, height: sStr.bounds.height)
         datePickerView.addSubview(sStr)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTimerList = []
         
         if let data = UserDefaults.standard.data(forKey: "setTimer") {
             let pasttimerList = try! PropertyListDecoder().decode([setTimer].self, from: data)
