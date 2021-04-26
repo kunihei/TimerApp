@@ -16,6 +16,7 @@
 		BA443264262BB56400B07966 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA443263262BB56400B07966 /* Assets.xcassets */; };
 		BA443267262BB56400B07966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA443265262BB56400B07966 /* LaunchScreen.storyboard */; };
 		BA88F25D26351DD000E1AB67 /* countDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88F25C26351DD000E1AB67 /* countDownViewController.swift */; };
+		BA88F2682636CBB400E1AB67 /* EditTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88F2672636CBB400E1AB67 /* EditTimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BA443266262BB56400B07966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA443268262BB56400B07966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA88F25C26351DD000E1AB67 /* countDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = countDownViewController.swift; sourceTree = "<group>"; };
+		BA88F2672636CBB400E1AB67 /* EditTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				BA44325E262BB56400B07966 /* ViewController.swift */,
 				BA88F25C26351DD000E1AB67 /* countDownViewController.swift */,
 				BA2FC53F262BE84D009C3FFA /* TimerListViewController.swift */,
+				BA88F2672636CBB400E1AB67 /* EditTimerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				BA2FC540262BE84D009C3FFA /* TimerListViewController.swift in Sources */,
 				BA44325F262BB56400B07966 /* ViewController.swift in Sources */,
 				BA44325B262BB56400B07966 /* AppDelegate.swift in Sources */,
+				BA88F2682636CBB400E1AB67 /* EditTimerViewController.swift in Sources */,
 				BA44325D262BB56400B07966 /* SceneDelegate.swift in Sources */,
 				BA2FC56E26339BA7009C3FFA /* TimerList.swift in Sources */,
 			);
