@@ -32,10 +32,6 @@ class TimerListViewController: UIViewController,UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let editAction = UIContextualAction(style: .normal, title: "編集") { (action, view, completionHndler) in
-            
-            completionHndler(true)
-        }
         
         let deleteAction = UIContextualAction(style: .normal, title: "削除") { (action, view, completionHndler) in
             self.timeList.remove(at: indexPath.row)
@@ -46,9 +42,8 @@ class TimerListViewController: UIViewController,UITableViewDelegate, UITableView
             
             completionHndler(true)
         }
-        editAction.backgroundColor = .blue
         deleteAction.backgroundColor = .red
-        return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

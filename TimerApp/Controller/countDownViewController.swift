@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class countDownViewController: UIViewController {
     
@@ -13,6 +14,9 @@ class countDownViewController: UIViewController {
     var mcount = Int()
     var scount = Int()
     var timer = Timer()
+    var soundIdRing:SystemSoundID = 1004
+    
+    let systemSoundID = SystemSoundID(kSystemSoundID_Vibrate)
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startBtn: UIButton!
@@ -55,6 +59,13 @@ class countDownViewController: UIViewController {
         }
         if(hcount == 0 && mcount == 0 && scount == 0){
             timerLabel.text = "カウントダウン終了！！"
+            AudioServicesAddSystemSoundCompletion(systemSoundID, nil, nil, { (systemSoundID, nil) -> Void in
+            }, nil)
+            AudioServicesPlaySystemSound(systemSoundID)
+            if let soundUrl = CFBundleCopyResourceURL(CFBundleGetMainBundle(), nil, nil, nil){
+                    AudioServicesCreateSystemSoundID(soundUrl, &soundIdRing)
+                    AudioServicesPlaySystemSound(soundIdRing)
+                }
             timer.invalidate()
         }else{
             timerLabel.text = "残り：\(hcount)時間\(mcount)分\(scount)秒"
