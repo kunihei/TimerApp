@@ -69,7 +69,6 @@ class ViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSour
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
-        pickerLabel.textColor = .black
         pickerLabel.font = pickerLabel.font.withSize(30)
         pickerLabel.textAlignment = NSTextAlignment.left
         pickerLabel.text = String(dataList[component][row])

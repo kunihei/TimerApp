@@ -16,6 +16,7 @@
 		BA443264262BB56400B07966 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA443263262BB56400B07966 /* Assets.xcassets */; };
 		BA443267262BB56400B07966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA443265262BB56400B07966 /* LaunchScreen.storyboard */; };
 		BA88F25D26351DD000E1AB67 /* countDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88F25C26351DD000E1AB67 /* countDownViewController.swift */; };
+		BA88F2732636D0C800E1AB67 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88F2722636D0C800E1AB67 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BA443266262BB56400B07966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA443268262BB56400B07966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA88F25C26351DD000E1AB67 /* countDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = countDownViewController.swift; sourceTree = "<group>"; };
+		BA88F2722636D0C800E1AB67 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				BA2FC56D26339BA7009C3FFA /* TimerList.swift */,
+				BA88F2722636D0C800E1AB67 /* CustomButton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				BA2FC540262BE84D009C3FFA /* TimerListViewController.swift in Sources */,
 				BA44325F262BB56400B07966 /* ViewController.swift in Sources */,
 				BA44325B262BB56400B07966 /* AppDelegate.swift in Sources */,
+				BA88F2732636D0C800E1AB67 /* CustomButton.swift in Sources */,
 				BA44325D262BB56400B07966 /* SceneDelegate.swift in Sources */,
 				BA2FC56E26339BA7009C3FFA /* TimerList.swift in Sources */,
 			);
@@ -323,6 +327,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ARG4D8LX2;
 				INFOPLIST_FILE = TimerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,6 +346,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ARG4D8LX2;
 				INFOPLIST_FILE = TimerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

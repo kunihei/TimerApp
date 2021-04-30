@@ -6,13 +6,19 @@
 //
 
 import UIKit
+import AudioToolbox
+
+private var vibrationCount = 5
+private var soundIdRing:SystemSoundID = 1304
 
 class countDownViewController: UIViewController {
     
     var hcount = Int()
     var mcount = Int()
     var scount = Int()
-    var timer = Timer()
+    private var timer = Timer()
+    
+    private let systemSoundID = SystemSoundID(kSystemSoundID_Vibrate)
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startBtn: UIButton!
@@ -54,7 +60,28 @@ class countDownViewController: UIViewController {
             }
         }
         if(hcount == 0 && mcount == 0 && scount == 0){
-            timerLabel.text = "カウントダウン終了！！"
+            timerLabel.text = "カウントダウン終了！"
+            vibrationCount = 5
+            AudioServicesAddSystemSoundCompletion(systemSoundID, nil, nil, { (systemSoundID, nil) -> Void in
+                vibrationCount -= 1
+                
+                if ( vibrationCount > 0 ) {
+                    // 繰り返し再生
+                    AudioServicesPlaySystemSound(systemSoundID)
+                    
+                    if let soundUrl = CFBundleCopyResourceURL(CFBundleGetMainBundle(), nil, nil, nil){
+                        AudioServicesCreateSystemSoundID(soundUrl, &soundIdRing)
+                        AudioServicesPlaySystemSound(soundIdRing)
+                    }
+                }
+                else {
+                    // コールバックを解除
+                    AudioServicesRemoveSystemSoundCompletion(systemSoundID)
+                }
+                
+            }, nil)
+            
+            AudioServicesPlaySystemSound(systemSoundID)
             timer.invalidate()
         }else{
             timerLabel.text = "残り：\(hcount)時間\(mcount)分\(scount)秒"
