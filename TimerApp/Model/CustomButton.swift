@@ -44,7 +44,6 @@ extension CustomButton {
     //影付きのボタンの生成
     internal func commonInit(){
         self.layer.shadowOffset = CGSize(width: 1, height: 1 )
-        self.layer.shadowColor = UIColor.gray.cgColor
         self.layer.shadowRadius = 5
         self.layer.shadowOpacity = 1.0
     }

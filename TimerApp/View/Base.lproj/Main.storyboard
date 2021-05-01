@@ -81,7 +81,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKt-Xs-izt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKt-Xs-izt" customClass="CustomButton" customModule="TimerApp" customModuleProvider="target">
                                 <rect key="frame" x="209" y="530" width="185" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.77072084880000002" blue="0.89849777730000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -96,13 +96,13 @@
                                     <action selector="stopButton:" destination="JYd-bl-xui" eventType="touchUpInside" id="vWM-mE-VMe"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkr-LT-94M">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkr-LT-94M">
                                 <rect key="frame" x="20" y="258" width="374" height="88"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="Ole-gT-w3h"/>
                                     <constraint firstAttribute="height" constant="88" id="cRW-uZ-daw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -121,7 +121,7 @@
                                     <action selector="back:" destination="JYd-bl-xui" eventType="touchUpInside" id="y0R-71-KeL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pf9-LP-DIx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pf9-LP-DIx" customClass="CustomButton" customModule="TimerApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="530" width="185" height="80"/>
                                 <color key="backgroundColor" red="0.83194428009999999" green="1" blue="0.8390846904" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>

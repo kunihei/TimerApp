@@ -8,7 +8,7 @@
 import UIKit
 import AudioToolbox
 
-private var vibrationCount = 5
+private var vibrationCount = 10
 private var soundIdRing:SystemSoundID = 1304
 
 class countDownViewController: UIViewController {
@@ -54,14 +54,14 @@ class countDownViewController: UIViewController {
         if(scount < 0){
             mcount -= 1
             scount = 59
-            if(mcount < 0){
-                hcount -= 1
-                mcount = 59
-            }
+        }
+        if(mcount < 0){
+            hcount -= 1
+            mcount = 59
         }
         if(hcount == 0 && mcount == 0 && scount == 0){
             timerLabel.text = "カウントダウン終了！"
-            vibrationCount = 5
+            vibrationCount = 10
             AudioServicesAddSystemSoundCompletion(systemSoundID, nil, nil, { (systemSoundID, nil) -> Void in
                 vibrationCount -= 1
                 
@@ -74,11 +74,6 @@ class countDownViewController: UIViewController {
                         AudioServicesPlaySystemSound(soundIdRing)
                     }
                 }
-                else {
-                    // コールバックを解除
-                    AudioServicesRemoveSystemSoundCompletion(systemSoundID)
-                }
-                
             }, nil)
             
             AudioServicesPlaySystemSound(systemSoundID)
@@ -89,6 +84,8 @@ class countDownViewController: UIViewController {
     }
     
     @IBAction func stopButton(_ sender: Any) {
+        // コールバックを解除
+        AudioServicesRemoveSystemSoundCompletion(systemSoundID)
         timer.invalidate()
     }
     
