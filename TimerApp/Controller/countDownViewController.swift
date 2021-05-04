@@ -7,6 +7,7 @@
 
 import UIKit
 import AudioToolbox
+import MBCircularProgressBar
 
 private var vibrationCount = 10
 private var soundIdRing:SystemSoundID = 1304
@@ -23,6 +24,7 @@ class countDownViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var stopBtn: UIButton!
+    @IBOutlet weak var progressView: MBCircularProgressBarView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,8 @@ class countDownViewController: UIViewController {
         if let data = try? PropertyListEncoder().encode(setTimer(hcount: hcount, mcount: mcount, scount: scount)){
             UserDefaults.standard.set(data, forKey: "countTimer")
         }
+        progressView.value = CGFloat(hcount * 60 * 60 + mcount * 60 + scount)
+        progressView.maxValue = CGFloat(hcount * 60 * 60 + mcount * 60 + scount)
         timerLabel.text = "残り：\(hcount)時間\(mcount)分\(scount)秒"
         // Do any additional setup after loading the view.
     }
@@ -59,7 +63,9 @@ class countDownViewController: UIViewController {
             hcount -= 1
             mcount = 59
         }
+        progressView.value = CGFloat(hcount * 60 * 60 + mcount * 60 + scount)
         if(hcount == 0 && mcount == 0 && scount == 0){
+            progressView.value = 0
             timerLabel.text = "カウントダウン終了！"
             vibrationCount = 10
             AudioServicesAddSystemSoundCompletion(systemSoundID, nil, nil, { (systemSoundID, nil) -> Void in
